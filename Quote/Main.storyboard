@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-AF-nGM" userLabel="Quote View">
+                                <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="XYt-Zk-Bag">
+                                        <rect key="frame" x="270" y="203" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="9IB-qZ-XXc">
+                                        <rect key="frame" x="20" y="76" width="30" height="31"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="智能设备搞了这么多年，我觉得最智能的地方就是没电会关机。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6H3-gX-VIl" userLabel="Quote Text View">
+                                        <rect key="frame" x="45" y="107" width="230" height="106"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Rkg-qD-rh0"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6H3-gX-VIl" secondAttribute="trailing" constant="40" id="CkR-d2-KQk"/>
+                                    <constraint firstAttribute="centerX" secondItem="6H3-gX-VIl" secondAttribute="centerX" id="Ejd-s2-d2r"/>
+                                    <constraint firstAttribute="centerY" secondItem="6H3-gX-VIl" secondAttribute="centerY" constant="0.5" id="Gy7-AS-zX9"/>
+                                    <constraint firstItem="XYt-Zk-Bag" firstAttribute="top" secondItem="6H3-gX-VIl" secondAttribute="bottom" constant="-10" id="IeR-VZ-TkW"/>
+                                    <constraint firstItem="XYt-Zk-Bag" firstAttribute="leading" secondItem="6H3-gX-VIl" secondAttribute="trailing" constant="-5" id="PBp-E5-SG8"/>
+                                    <constraint firstItem="6H3-gX-VIl" firstAttribute="top" secondItem="9IB-qZ-XXc" secondAttribute="bottom" id="hvL-zl-Ucu"/>
+                                    <constraint firstItem="6H3-gX-VIl" firstAttribute="leading" secondItem="9IB-qZ-XXc" secondAttribute="trailing" constant="-5" id="kgX-Jp-sB0"/>
+                                    <constraint firstAttribute="width" secondItem="G6J-AF-nGM" secondAttribute="height" multiplier="1:1" id="oDD-dN-zcM"/>
+                                    <constraint firstItem="6H3-gX-VIl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G6J-AF-nGM" secondAttribute="leading" constant="40" id="pdm-Th-HVN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhn-dD-hEP">
+                                <rect key="frame" x="140" y="415" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bo9-yS-zuo"/>
+                                    <constraint firstAttribute="height" constant="40" id="mb9-9H-Ejx"/>
+                                </constraints>
+                                <state key="normal" image="share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8aN-rq-lJy"/>
+                                    <action selector="shareButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="gsP-Sx-Wmh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="G6J-AF-nGM" secondAttribute="centerY" id="4ds-y7-hb0"/>
+                            <constraint firstAttribute="width" secondItem="G6J-AF-nGM" secondAttribute="width" id="A2P-03-GKy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vhn-dD-hEP" secondAttribute="bottom" constant="25" id="B1d-zl-fzr"/>
+                            <constraint firstAttribute="centerX" secondItem="G6J-AF-nGM" secondAttribute="centerX" id="F0K-p7-iIW"/>
+                            <constraint firstAttribute="centerX" secondItem="vhn-dD-hEP" secondAttribute="centerX" id="wXc-uj-hR9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vhn-dD-hEP" secondAttribute="bottom" constant="25" id="zRQ-VF-Tf8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="B1d-zl-fzr"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="QuoteUITextView" destination="6H3-gX-VIl" id="wn1-B5-CXC"/>
+                        <outlet property="QuoteView" destination="G6J-AF-nGM" id="FUh-M1-ckT"/>
+                        <outlet property="ShareButton" destination="vhn-dD-hEP" id="PHa-R1-4B4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="448"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="left" width="30" height="31"/>
+        <image name="right" width="30" height="30"/>
+        <image name="share" width="40" height="40"/>
+    </resources>
+</document>
