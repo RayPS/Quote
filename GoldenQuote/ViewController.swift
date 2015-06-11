@@ -13,7 +13,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var QuoteView: SpringView!
     @IBOutlet weak var QuoteUITextView: UITextView!
-    @IBOutlet weak var OverlayUITextView: UITextView!
     
     var gradient = CAGradientLayer()
     
@@ -34,19 +33,6 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        gradient.frame = QuoteUITextView.bounds
-        QuoteUITextView.frame = QuoteUITextView.bounds
-        
-        gradient.colors = [UIColor(netHex:0xEDDE5D).CGColor, UIColor(netHex:0xF09819).CGColor]
-        gradient.locations = [0.0,1.0];
-        gradient.mask = QuoteUITextView.layer
-        
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
-        QuoteView.layer.addSublayer(gradient)
-        
     }
 
 }
@@ -56,7 +42,6 @@ extension ViewController: UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
-        QuoteUITextView.text = OverlayUITextView.text
         
         if text == "\n" {
             textView.resignFirstResponder()
