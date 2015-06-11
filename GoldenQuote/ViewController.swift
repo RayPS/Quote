@@ -21,12 +21,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        QuoteUITextView.clipsToBounds = false
+        
+        
         QuoteFakeUITextView = UITextView(frame: CGRectZero)
         QuoteFakeUITextView.font = UIFont(name: "HiraKakuProN-W3", size: 20)
         QuoteFakeUITextView.autocorrectionType = UITextAutocorrectionType.No
         QuoteFakeUITextView.spellCheckingType = UITextSpellCheckingType.No
         QuoteFakeUITextView.textAlignment = .Center
+        QuoteFakeUITextView.clipsToBounds = false
         QuoteFakeUITextView.backgroundColor = UIColor.clearColor()
+        
+        var displayLink = CADisplayLink(target: self, selector: Selector("callbackSync"))
+        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        
+    }
+    
+    func callbackSync() {
+        
+        gradient.frame = QuoteUITextView.frame
+        
+        QuoteFakeUITextView.frame = QuoteUITextView.bounds
+        
+        QuoteFakeUITextView.text = QuoteUITextView.text
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -41,7 +60,6 @@ class ViewController: UIViewController {
         
         presentViewController(shareMenu, animated: true, completion: nil)
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -70,7 +88,6 @@ extension ViewController: UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
-        
         if text == "\n" {
             textView.resignFirstResponder()
             QuoteView.y = 0
@@ -84,12 +101,10 @@ extension ViewController: UITextViewDelegate {
         
         println("text did change")
         
-        QuoteFakeUITextView.text = QuoteUITextView.text
-        gradient.frame = QuoteUITextView.frame
-        QuoteFakeUITextView.bounds = QuoteUITextView.bounds
-        
+//        QuoteFakeUITextView.text = QuoteUITextView.text
         
     }
+    
     
     
     func textViewDidBeginEditing(textView: UITextView) {
