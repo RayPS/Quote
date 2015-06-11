@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    @IBOutlet weak var QuoteView: UIView!
+    @IBOutlet weak var QuoteView: SpringView!
     @IBOutlet weak var QuoteUITextView: UITextView!
-    @IBOutlet weak var ShareButton: UIButton!
-    
+    @IBOutlet weak var ShareButton: SpringButton!
+    @IBOutlet weak var Bubble: SpringButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,41 +24,81 @@ class ViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
-
-    @IBAction func shareButtonDidTouch(sender: AnyObject) {
-        
-        let image = QuoteView.pb_takeSnapshot()
-        let shareMenu = UIActivityViewController(activityItems: [image], applicationActivities: nil)
     
-        presentViewController(shareMenu, animated: true, completion: nil)
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    
+    func share() {
+        let image = QuoteView.pb_takeSnapshot()
+        let shareMenu = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        
+        shareMenu.completionWithItemsHandler = { activity, success, items, error in
+            if !success {
+                println("cancelled")
+                return
+            }
+            
+            if activity == UIActivityTypeSaveToCameraRoll {
+                println("cameraRoll")
+                
+                self.Bubble.animation = "fadeInDown"
+                self.Bubble.animateNext {
+                    self.Bubble.delay = 1.0
+                    self.Bubble.y = -20
+                    self.Bubble.animation = "zoomOut"
+                    self.Bubble.animateTo()
+                }
+            
+            }
+        }
+        
+        presentViewController(shareMenu, animated: true, completion: nil)
+    }
 
+    func loadRemoteQuote() {
+        request(.GET, "http://s.rayps.com/files/quote.json")
+            .responseJSON { (req, res, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    println(req)
+                    println(res)
+                } else {
+                    var json = JSON(json!)
+                    self.QuoteUITextView.text = json["quote"].string
+                }
+        }
+    }
+    
+    func dissmiss(sender: UITextView) {
+        sender.resignFirstResponder()
+        QuoteView.y = 0
+        QuoteView.animateTo()
+    }
+    
     @IBAction func shareButtonTouchDown(sender: AnyObject) {
-        println("touch")
-        
-//        ShareButton.animation = "pop"
-//        ShareButton.animate()
-
-//        ShareButton
-        
+        ShareButton.scaleX = 1.5
+        ShareButton.scaleY = 1.5
+        ShareButton.duration = 0.4
+        ShareButton.animateToNext{
+            self.share()
+        }
+    }
+    
+    @IBAction func shareButtonTouchUp(sender: AnyObject) {
+        ShareButton.scaleX = 1.0
+        ShareButton.scaleY = 1.0
+        ShareButton.delay = 0.2
+        ShareButton.duration = 0.2
+        ShareButton.animateTo()
+    }
+    @IBAction func dissmissButtonDidTouch(sender: AnyObject) {
+        dissmiss(QuoteUITextView)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -74,64 +114,41 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextViewDelegate {
     
+    // Dissmiss keyboard
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        
-        
         if text == "\n" {
-            textView.resignFirstResponder()
-            
-//            QuoteView.y = 0
-//            QuoteView.animateTo()
-            
+            dissmiss(textView)
             return false
         }
+        if textView.contentSize.height > 316 {
+//            return false
+        }
+        
+        textView.textContainer.maximumNumberOfLines = 9;
+        textView.textContainer.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        
         return true
     }
     
+//    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+//        println("textViewShouldBeginEditing")
+//
+//        return true
+//    }
+    
     func textViewDidBeginEditing(textView: UITextView) {
-//        QuoteView.y = -200
-//        QuoteView.animateTo()
+        println("textViewDidBeginEditing")
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        QuoteView.y = -(screenSize.height * 0.5 - screenSize.width * 0.5)
+        QuoteView.animateTo()
+        
+//        textView.becomeFirstResponder()
+//        textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.endOfDocument)
+
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 extension UIView {
     
@@ -145,19 +162,5 @@ extension UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
-    }
-}
-
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(netHex:Int) {
-        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }

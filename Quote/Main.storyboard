@@ -17,20 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-AF-nGM" userLabel="Quote View">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqm-cn-Ipr" userLabel="Dissmiss Button">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dissmissButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tc0-Nj-f8v"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-AF-nGM" userLabel="Quote View" customClass="SpringView" customModule="Quote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="XYt-Zk-Bag">
-                                        <rect key="frame" x="270" y="203" width="30" height="30"/>
+                                        <rect key="frame" x="252" y="176" width="30" height="30"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="9IB-qZ-XXc">
-                                        <rect key="frame" x="20" y="76" width="30" height="31"/>
+                                        <rect key="frame" x="39" y="109" width="30" height="31"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="智能设备搞了这么多年，我觉得最智能的地方就是没电会关机。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6H3-gX-VIl" userLabel="Quote Text View">
-                                        <rect key="frame" x="45" y="107" width="230" height="106"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Click Here to Type" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6H3-gX-VIl" userLabel="Quote Text View">
+                                        <rect key="frame" x="64" y="140" width="193" height="46"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Rkg-qD-rh0"/>
                                         </connections>
@@ -40,7 +49,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6H3-gX-VIl" secondAttribute="trailing" constant="40" id="CkR-d2-KQk"/>
                                     <constraint firstAttribute="centerX" secondItem="6H3-gX-VIl" secondAttribute="centerX" id="Ejd-s2-d2r"/>
-                                    <constraint firstAttribute="centerY" secondItem="6H3-gX-VIl" secondAttribute="centerY" constant="0.5" id="Gy7-AS-zX9"/>
+                                    <constraint firstAttribute="centerY" secondItem="6H3-gX-VIl" secondAttribute="centerY" constant="-3" id="Gy7-AS-zX9"/>
                                     <constraint firstItem="XYt-Zk-Bag" firstAttribute="top" secondItem="6H3-gX-VIl" secondAttribute="bottom" constant="-10" id="IeR-VZ-TkW"/>
                                     <constraint firstItem="XYt-Zk-Bag" firstAttribute="leading" secondItem="6H3-gX-VIl" secondAttribute="trailing" constant="-5" id="PBp-E5-SG8"/>
                                     <constraint firstItem="6H3-gX-VIl" firstAttribute="top" secondItem="9IB-qZ-XXc" secondAttribute="bottom" id="hvL-zl-Ucu"/>
@@ -49,7 +58,7 @@
                                     <constraint firstItem="6H3-gX-VIl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G6J-AF-nGM" secondAttribute="leading" constant="40" id="pdm-Th-HVN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhn-dD-hEP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhn-dD-hEP" userLabel="Share Button" customClass="SpringButton" customModule="Quote" customModuleProvider="target">
                                 <rect key="frame" x="140" y="415" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="bo9-yS-zuo"/>
@@ -59,9 +68,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8aN-rq-lJy"/>
                                     <action selector="shareButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="gsP-Sx-Wmh"/>
+                                    <action selector="shareButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IVH-If-mbk"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQw-CQ-nZU" userLabel="Saved Bubble" customClass="SpringButton" customModule="Quote" customModuleProvider="target">
+                                <rect key="frame" x="120" y="370" width="80" height="40"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Saved" backgroundImage="bubble">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -70,6 +90,12 @@
                             <constraint firstAttribute="width" secondItem="G6J-AF-nGM" secondAttribute="width" id="A2P-03-GKy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vhn-dD-hEP" secondAttribute="bottom" constant="25" id="B1d-zl-fzr"/>
                             <constraint firstAttribute="centerX" secondItem="G6J-AF-nGM" secondAttribute="centerX" id="F0K-p7-iIW"/>
+                            <constraint firstAttribute="height" secondItem="Fqm-cn-Ipr" secondAttribute="height" id="JDo-qn-7c2"/>
+                            <constraint firstAttribute="width" secondItem="Fqm-cn-Ipr" secondAttribute="width" id="iZu-AR-bdv"/>
+                            <constraint firstItem="SQw-CQ-nZU" firstAttribute="centerX" secondItem="vhn-dD-hEP" secondAttribute="centerX" id="nO5-Hn-rPi"/>
+                            <constraint firstAttribute="centerY" secondItem="Fqm-cn-Ipr" secondAttribute="centerY" id="nX7-uC-cqe"/>
+                            <constraint firstAttribute="centerX" secondItem="Fqm-cn-Ipr" secondAttribute="centerX" id="sBq-op-YSt"/>
+                            <constraint firstItem="vhn-dD-hEP" firstAttribute="top" secondItem="SQw-CQ-nZU" secondAttribute="bottom" constant="5" id="sq8-RV-YnC"/>
                             <constraint firstAttribute="centerX" secondItem="vhn-dD-hEP" secondAttribute="centerX" id="wXc-uj-hR9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vhn-dD-hEP" secondAttribute="bottom" constant="25" id="zRQ-VF-Tf8"/>
                         </constraints>
@@ -81,9 +107,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="Bubble" destination="SQw-CQ-nZU" id="imG-jb-Mg8"/>
                         <outlet property="QuoteUITextView" destination="6H3-gX-VIl" id="wn1-B5-CXC"/>
                         <outlet property="QuoteView" destination="G6J-AF-nGM" id="FUh-M1-ckT"/>
-                        <outlet property="ShareButton" destination="vhn-dD-hEP" id="PHa-R1-4B4"/>
+                        <outlet property="ShareButton" destination="vhn-dD-hEP" id="e9u-Of-2NV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bubble" width="80" height="40"/>
         <image name="left" width="30" height="31"/>
         <image name="right" width="30" height="30"/>
         <image name="share" width="40" height="40"/>
