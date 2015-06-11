@@ -26,9 +26,12 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func testButtonDIdTouch(sender: AnyObject) {
+    @IBAction func shareButtonDidTouch(sender: AnyObject) {
         
-        UIImageWriteToSavedPhotosAlbum(QuoteView.pb_takeSnapshot(), nil, nil, nil)
+        let image = QuoteView.pb_takeSnapshot()
+        let shareMenu = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+    
+        presentViewController(shareMenu, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +39,28 @@ class ViewController: UIViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 extension ViewController: UITextViewDelegate {
@@ -60,6 +85,43 @@ extension ViewController: UITextViewDelegate {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 extension UIView {

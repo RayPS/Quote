@@ -55,7 +55,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testButtonDIdTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2nJ-h3-1kX"/>
+                                    <action selector="shareButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8aN-rq-lJy"/>
                                 </connections>
                             </button>
                         </subviews>
