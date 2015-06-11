@@ -55,14 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7184FC521B2966C2004ADDEF /* GoldenQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7184FC521B2966C2004ADDEF /* Quote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7184FC561B2966C2004ADDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7184FC571B2966C2004ADDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7184FC591B2966C2004ADDEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7184FC5C1B2966C2004ADDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7184FC5E1B2966C2004ADDEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7184FC611B2966C2004ADDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7184FC671B2966C2004ADDEF /* GoldenQuoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenQuoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7184FC671B2966C2004ADDEF /* QuoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7184FC6C1B2966C2004ADDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7184FC6D1B2966C2004ADDEF /* GoldenQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenQuoteTests.swift; sourceTree = "<group>"; };
 		7184FC7A1B29815A004ADDEF /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 		7184FC531B2966C2004ADDEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7184FC521B2966C2004ADDEF /* GoldenQuote.app */,
-				7184FC671B2966C2004ADDEF /* GoldenQuoteTests.xctest */,
+				7184FC521B2966C2004ADDEF /* Quote.app */,
+				7184FC671B2966C2004ADDEF /* QuoteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7184FC511B2966C2004ADDEF /* GoldenQuote */ = {
+		7184FC511B2966C2004ADDEF /* Quote */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7184FC711B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "GoldenQuote" */;
+			buildConfigurationList = 7184FC711B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "Quote" */;
 			buildPhases = (
 				7184FC4E1B2966C2004ADDEF /* Sources */,
 				7184FC4F1B2966C2004ADDEF /* Frameworks */,
@@ -224,14 +224,14 @@
 			);
 			dependencies = (
 			);
-			name = GoldenQuote;
+			name = Quote;
 			productName = GoldenQuote;
-			productReference = 7184FC521B2966C2004ADDEF /* GoldenQuote.app */;
+			productReference = 7184FC521B2966C2004ADDEF /* Quote.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7184FC661B2966C2004ADDEF /* GoldenQuoteTests */ = {
+		7184FC661B2966C2004ADDEF /* QuoteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7184FC741B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "GoldenQuoteTests" */;
+			buildConfigurationList = 7184FC741B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "QuoteTests" */;
 			buildPhases = (
 				7184FC631B2966C2004ADDEF /* Sources */,
 				7184FC641B2966C2004ADDEF /* Frameworks */,
@@ -242,9 +242,9 @@
 			dependencies = (
 				7184FC691B2966C2004ADDEF /* PBXTargetDependency */,
 			);
-			name = GoldenQuoteTests;
+			name = QuoteTests;
 			productName = GoldenQuoteTests;
-			productReference = 7184FC671B2966C2004ADDEF /* GoldenQuoteTests.xctest */;
+			productReference = 7184FC671B2966C2004ADDEF /* QuoteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7184FC4D1B2966C2004ADDEF /* Build configuration list for PBXProject "GoldenQuote" */;
+			buildConfigurationList = 7184FC4D1B2966C2004ADDEF /* Build configuration list for PBXProject "Quote" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -278,8 +278,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7184FC511B2966C2004ADDEF /* GoldenQuote */,
-				7184FC661B2966C2004ADDEF /* GoldenQuoteTests */,
+				7184FC511B2966C2004ADDEF /* Quote */,
+				7184FC661B2966C2004ADDEF /* QuoteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +356,7 @@
 /* Begin PBXTargetDependency section */
 		7184FC691B2966C2004ADDEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7184FC511B2966C2004ADDEF /* GoldenQuote */;
+			target = 7184FC511B2966C2004ADDEF /* Quote */;
 			targetProxy = 7184FC681B2966C2004ADDEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -470,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoldenQuote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Quote;
 			};
 			name = Debug;
 		};
@@ -480,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoldenQuote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Quote;
 			};
 			name = Release;
 		};
@@ -498,7 +498,7 @@
 				);
 				INFOPLIST_FILE = GoldenQuoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuoteTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenQuote.app/GoldenQuote";
 			};
 			name = Debug;
@@ -513,7 +513,7 @@
 				);
 				INFOPLIST_FILE = GoldenQuoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuoteTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenQuote.app/GoldenQuote";
 			};
 			name = Release;
@@ -521,7 +521,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7184FC4D1B2966C2004ADDEF /* Build configuration list for PBXProject "GoldenQuote" */ = {
+		7184FC4D1B2966C2004ADDEF /* Build configuration list for PBXProject "Quote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7184FC6F1B2966C2004ADDEF /* Debug */,
@@ -530,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7184FC711B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "GoldenQuote" */ = {
+		7184FC711B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "Quote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7184FC721B2966C2004ADDEF /* Debug */,
@@ -538,7 +538,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		7184FC741B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "GoldenQuoteTests" */ = {
+		7184FC741B2966C2004ADDEF /* Build configuration list for PBXNativeTarget "QuoteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7184FC751B2966C2004ADDEF /* Debug */,
