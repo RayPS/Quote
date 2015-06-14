@@ -37,22 +37,16 @@ class ViewController: UIViewController {
         
         
         shareMenu.completionWithItemsHandler = { activity, success, items, error in
+            
             if !success {
                 println("cancelled")
                 return
-            }
-            
-            if activity == UIActivityTypeSaveToCameraRoll {
-                println("cameraRoll")
-                
-                self.Bubble.animation = "fadeInDown"
-                self.Bubble.animateNext {
-                    self.Bubble.delay = 1.0
-                    self.Bubble.y = -20
-                    self.Bubble.animation = "zoomOut"
-                    self.Bubble.animateTo()
+            } else {
+                if activity == UIActivityTypeSaveToCameraRoll {
+                    self.bubble("Saved")
+                } else {
+                    self.bubble("Done")
                 }
-            
             }
         }
         
@@ -77,6 +71,18 @@ class ViewController: UIViewController {
         sender.resignFirstResponder()
         QuoteView.y = 0
         QuoteView.animateTo()
+    }
+    
+    
+    func bubble(title: String) {
+        self.Bubble.setTitle(title, forState: UIControlState.Normal)
+        self.Bubble.animation = "fadeInDown"
+        self.Bubble.animateNext {
+            self.Bubble.delay = 1.0
+            self.Bubble.y = -20
+            self.Bubble.animation = "zoomOut"
+            self.Bubble.animateTo()
+        }
     }
     
     @IBAction func shareButtonTouchDown(sender: AnyObject) {
