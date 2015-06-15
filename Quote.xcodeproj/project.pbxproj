@@ -36,14 +36,13 @@
 		71381AF31B29D7D700F30DCA /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71381AD61B29D7D700F30DCA /* TransitionManager.swift */; };
 		71381AF41B29D7D700F30DCA /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71381AD71B29D7D700F30DCA /* TransitionZoom.swift */; };
 		71381AF51B29D7D700F30DCA /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71381AD81B29D7D700F30DCA /* UnwindSegue.swift */; };
-		71381AF71B2A0DC000F30DCA /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71381AF61B2A0DC000F30DCA /* Alamofire.swift */; };
-		71381AF91B2A12A000F30DCA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71381AF81B2A12A000F30DCA /* SwiftyJSON.swift */; };
 		71C434BA1B29C47E0069781E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C434B91B29C47E0069781E /* AppDelegate.swift */; };
 		71C434D01B29C47F0069781E /* QuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C434CF1B29C47F0069781E /* QuoteTests.swift */; };
 		71C434DD1B29C4A90069781E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C434D91B29C4A90069781E /* ViewController.swift */; };
 		71C434DE1B29C4A90069781E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C434DA1B29C4A90069781E /* Main.storyboard */; };
 		71C434DF1B29C4A90069781E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C434DB1B29C4A90069781E /* Images.xcassets */; };
 		71C434E01B29C4A90069781E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C434DC1B29C4A90069781E /* LaunchScreen.xib */; };
+		71DB7CEF1B2E081F0055EB56 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB7CEE1B2E081F0055EB56 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +86,6 @@
 		71381AD61B29D7D700F30DCA /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		71381AD71B29D7D700F30DCA /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		71381AD81B29D7D700F30DCA /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		71381AF61B2A0DC000F30DCA /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		71381AF81B2A12A000F30DCA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		71C434B41B29C47E0069781E /* Quote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C434B81B29C47E0069781E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C434B91B29C47E0069781E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +96,7 @@
 		71C434DA1B29C4A90069781E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		71C434DB1B29C4A90069781E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71C434DC1B29C4A90069781E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		71DB7CEE1B2E081F0055EB56 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,11 +177,10 @@
 			children = (
 				71C434B91B29C47E0069781E /* AppDelegate.swift */,
 				71C434D91B29C4A90069781E /* ViewController.swift */,
+				71DB7CEE1B2E081F0055EB56 /* AlertViewController.swift */,
 				71C434DA1B29C4A90069781E /* Main.storyboard */,
 				71C434DC1B29C4A90069781E /* LaunchScreen.xib */,
 				71C434DB1B29C4A90069781E /* Images.xcassets */,
-				71381AF81B2A12A000F30DCA /* SwiftyJSON.swift */,
-				71381AF61B2A0DC000F30DCA /* Alamofire.swift */,
 				71381ABA1B29D7D700F30DCA /* Spring */,
 				71C434B71B29C47E0069781E /* Supporting Files */,
 			);
@@ -323,7 +320,6 @@
 				71381AF41B29D7D700F30DCA /* TransitionZoom.swift in Sources */,
 				71381AE21B29D7D700F30DCA /* DesignableTextView.swift in Sources */,
 				71C434DD1B29C4A90069781E /* ViewController.swift in Sources */,
-				71381AF71B2A0DC000F30DCA /* Alamofire.swift in Sources */,
 				71381AE91B29D7D700F30DCA /* Misc.swift in Sources */,
 				71381AE71B29D7D700F30DCA /* LoadingView.swift in Sources */,
 				71C434BA1B29C47E0069781E /* AppDelegate.swift in Sources */,
@@ -331,11 +327,11 @@
 				71381ADC1B29D7D700F30DCA /* BlurView.swift in Sources */,
 				71381AE31B29D7D700F30DCA /* DesignableView.swift in Sources */,
 				71381AF11B29D7D700F30DCA /* SpringTextView.swift in Sources */,
+				71DB7CEF1B2E081F0055EB56 /* AlertViewController.swift in Sources */,
 				71381AF01B29D7D700F30DCA /* SpringTextField.swift in Sources */,
 				71381AEA1B29D7D700F30DCA /* SoundPlayer.swift in Sources */,
 				71381AE41B29D7D700F30DCA /* ImageLoader.swift in Sources */,
 				71381ADB1B29D7D700F30DCA /* AutoTextView.swift in Sources */,
-				71381AF91B2A12A000F30DCA /* SwiftyJSON.swift in Sources */,
 				71381AF51B29D7D700F30DCA /* UnwindSegue.swift in Sources */,
 				71381ADA1B29D7D700F30DCA /* AsyncImageView.swift in Sources */,
 				71381AEC1B29D7D700F30DCA /* SpringAnimation.swift in Sources */,

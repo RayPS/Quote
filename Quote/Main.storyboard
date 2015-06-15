@@ -111,11 +111,145 @@
                         <outlet property="QuoteUITextView" destination="6H3-gX-VIl" id="wn1-B5-CXC"/>
                         <outlet property="QuoteView" destination="G6J-AF-nGM" id="FUh-M1-ckT"/>
                         <outlet property="ShareButton" destination="vhn-dD-hEP" id="e9u-Of-2NV"/>
+                        <segue destination="UeT-Gp-EEF" kind="presentation" identifier="shakeAlert" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3He-lk-rqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="333" y="448"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="OZC-AB-66v">
+            <objects>
+                <viewController id="UeT-Gp-EEF" userLabel="Alert View Controller" customClass="AlertViewController" customModule="Quote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="206-Xa-E2O"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Wd-D8-xjc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="am0-IU-Krb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVa-ze-ZqR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="m7H-qR-Ld5">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ0-Cy-tlv" userLabel="Background Button">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="noButtonDidTouch:" destination="UeT-Gp-EEF" eventType="touchUpInside" id="MGv-sp-3eh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuE-hw-O1M" userLabel="Alert View" customClass="DesignableView" customModule="Quote" customModuleProvider="target">
+                                <rect key="frame" x="30" y="140" width="260" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear All Text?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEz-y6-4uF">
+                                        <rect key="frame" x="0.0" y="60" width="260" height="20"/>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehN-OO-cLz">
+                                        <rect key="frame" x="145" y="135" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BfL-Bh-cHX"/>
+                                            <constraint firstAttribute="width" constant="100" id="LWt-t3-Y76"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yesButtonDidTouch:" destination="UeT-Gp-EEF" eventType="touchUpInside" id="qgr-dA-oKd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGN-bJ-dkA">
+                                        <rect key="frame" x="15" y="135" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Pvy-qc-bSz"/>
+                                            <constraint firstAttribute="width" constant="100" id="aBd-0O-1nH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noButtonDidTouch:" destination="UeT-Gp-EEF" eventType="touchUpInside" id="30f-HA-uf4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="oEz-y6-4uF" secondAttribute="centerX" id="05z-je-xUc"/>
+                                    <constraint firstAttribute="bottom" secondItem="lGN-bJ-dkA" secondAttribute="bottom" constant="15" id="2lA-45-e6I"/>
+                                    <constraint firstItem="oEz-y6-4uF" firstAttribute="top" secondItem="TuE-hw-O1M" secondAttribute="top" constant="60" id="31E-BY-VmJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ehN-OO-cLz" secondAttribute="bottom" constant="15" id="FDv-CC-FYd"/>
+                                    <constraint firstItem="lGN-bJ-dkA" firstAttribute="leading" secondItem="TuE-hw-O1M" secondAttribute="leading" constant="15" id="HSo-Pn-pei"/>
+                                    <constraint firstAttribute="trailing" secondItem="ehN-OO-cLz" secondAttribute="trailing" constant="15" id="RAP-hm-WCC"/>
+                                    <constraint firstAttribute="width" secondItem="oEz-y6-4uF" secondAttribute="width" id="dqs-CS-Ygv"/>
+                                    <constraint firstAttribute="height" constant="200" id="kaa-Ac-WCS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOutBack"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleY">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="y">
+                                        <real key="value" value="-400"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="shake"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lZ0-Cy-tlv" firstAttribute="height" secondItem="am0-IU-Krb" secondAttribute="height" id="6Ol-ii-c6g"/>
+                            <constraint firstAttribute="height" secondItem="JVa-ze-ZqR" secondAttribute="height" id="8OK-Ao-31o"/>
+                            <constraint firstItem="7Wd-D8-xjc" firstAttribute="top" secondItem="TuE-hw-O1M" secondAttribute="bottom" constant="100" id="DBw-4t-GCz"/>
+                            <constraint firstAttribute="centerX" secondItem="JVa-ze-ZqR" secondAttribute="centerX" id="Htd-Tx-6nm"/>
+                            <constraint firstAttribute="centerX" secondItem="TuE-hw-O1M" secondAttribute="centerX" id="Kgo-fB-dMv"/>
+                            <constraint firstAttribute="width" secondItem="JVa-ze-ZqR" secondAttribute="width" id="Kv4-75-ep8"/>
+                            <constraint firstAttribute="centerY" secondItem="TuE-hw-O1M" secondAttribute="centerY" id="L4t-hg-baB"/>
+                            <constraint firstAttribute="centerY" secondItem="lZ0-Cy-tlv" secondAttribute="centerY" id="aBp-12-b9J"/>
+                            <constraint firstAttribute="trailing" secondItem="TuE-hw-O1M" secondAttribute="trailing" constant="30" id="aCK-Uf-V2j"/>
+                            <constraint firstAttribute="centerX" secondItem="lZ0-Cy-tlv" secondAttribute="centerX" id="apk-BM-buD"/>
+                            <constraint firstItem="TuE-hw-O1M" firstAttribute="leading" secondItem="am0-IU-Krb" secondAttribute="leading" constant="30" id="f0L-vZ-wyo"/>
+                            <constraint firstAttribute="centerY" secondItem="JVa-ze-ZqR" secondAttribute="centerY" id="j39-6j-jB4"/>
+                            <constraint firstAttribute="centerX" secondItem="TuE-hw-O1M" secondAttribute="centerX" id="ucd-mx-wG7"/>
+                            <constraint firstAttribute="centerY" secondItem="TuE-hw-O1M" secondAttribute="centerY" id="zE2-Jn-PaL"/>
+                            <constraint firstItem="lZ0-Cy-tlv" firstAttribute="width" secondItem="am0-IU-Krb" secondAttribute="width" id="zc2-eK-P3z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zE2-Jn-PaL"/>
+                                <exclude reference="DBw-4t-GCz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="AlertView" destination="TuE-hw-O1M" id="4x8-sb-TzS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1T-ZE-t7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="1135"/>
         </scene>
     </scenes>
     <resources>

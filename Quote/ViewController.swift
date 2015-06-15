@@ -9,15 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-
+    
     @IBOutlet weak var QuoteView: SpringView!
     @IBOutlet weak var QuoteUITextView: UITextView!
     @IBOutlet weak var ShareButton: SpringButton!
     @IBOutlet weak var Bubble: SpringButton!
     
+    let placeHolder = "Click Here to Type"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.QuoteUITextView.text = placeHolder
+        self.QuoteUITextView.textColor = UIColor.grayColor()
         
     }
     
@@ -25,9 +29,24 @@ class ViewController: UIViewController {
         return true
     }
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "shakeAlert" {
+            if let vc = segue.destinationViewController as? AlertViewController {
+                vc.afterDismissAction = {
+                    self.QuoteUITextView.text = self.placeHolder
+                    self.QuoteUITextView.textColor = UIColor.grayColor()
+                }
+            }
+        }
     }
     
     
@@ -52,27 +71,21 @@ class ViewController: UIViewController {
         
         presentViewController(shareMenu, animated: true, completion: nil)
     }
-
-    func loadRemoteQuote() {
-        request(.GET, "http://s.rayps.com/files/quote.json")
-            .responseJSON { (req, res, json, error) in
-                if(error != nil) {
-                    NSLog("Error: \(error)")
-                    println(req)
-                    println(res)
-                } else {
-                    var json = JSON(json!)
-                    self.QuoteUITextView.text = json["quote"].string
-                }
-        }
-    }
     
+
     func dissmiss(sender: UITextView) {
         sender.resignFirstResponder()
         QuoteView.y = 0
         QuoteView.animateTo()
+        
+        
+        let contentString = QuoteUITextView.text
+        let contentStringWithoutSpaces = contentString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        if contentStringWithoutSpaces == "" {
+            self.QuoteUITextView.text = placeHolder
+            self.QuoteUITextView.textColor = UIColor.grayColor()
+        }
     }
-    
     
     func bubble(title: String) {
         self.Bubble.setTitle(title, forState: UIControlState.Normal)
@@ -84,6 +97,9 @@ class ViewController: UIViewController {
             self.Bubble.animateTo()
         }
     }
+    
+
+    
     
     @IBAction func shareButtonTouchDown(sender: AnyObject) {
         ShareButton.scaleX = 1.5
@@ -103,6 +119,15 @@ class ViewController: UIViewController {
     }
     @IBAction func dissmissButtonDidTouch(sender: AnyObject) {
         dissmiss(QuoteUITextView)
+    }
+    
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if motion == UIEventSubtype.MotionShake {
+            if QuoteUITextView.text != placeHolder {
+                performSegueWithIdentifier("shakeAlert", sender: self)
+            }
+        }
     }
 }
 
@@ -124,11 +149,12 @@ extension ViewController: UITextViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             dissmiss(textView)
+            
             return false
         }
-        if textView.contentSize.height > 316 {
+//        if textView.contentSize.height > 316 {
 //            return false
-        }
+//        }
         
         textView.textContainer.maximumNumberOfLines = 9;
         textView.textContainer.lineBreakMode = NSLineBreakMode.ByTruncatingTail
@@ -136,11 +162,6 @@ extension ViewController: UITextViewDelegate {
         return true
     }
     
-//    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-//        println("textViewShouldBeginEditing")
-//
-//        return true
-//    }
     
     func textViewDidBeginEditing(textView: UITextView) {
         println("textViewDidBeginEditing")
@@ -149,9 +170,11 @@ extension ViewController: UITextViewDelegate {
         QuoteView.y = -(screenSize.height * 0.5 - screenSize.width * 0.5)
         QuoteView.animateTo()
         
-//        textView.becomeFirstResponder()
-//        textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.endOfDocument)
-
+        if QuoteUITextView.text == placeHolder {
+            QuoteUITextView.text = ""
+        }
+        
+        self.QuoteUITextView.textColor = UIColor.blackColor()
     }
     
 }
