@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ShareButton: SpringButton!
     @IBOutlet weak var Bubble: SpringButton!
     
-    let placeHolder = "Click Here to Type"
+    let placeHolder = "Tap Here to Type"
     
     override func viewDidLoad() {
         super.viewDidLoad()

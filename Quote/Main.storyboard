@@ -29,14 +29,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-AF-nGM" userLabel="Quote View" customClass="SpringView" customModule="Quote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="XYt-Zk-Bag">
-                                        <rect key="frame" x="252" y="176" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="XYt-Zk-Bag">
+                                        <rect key="frame" x="246" y="176" width="30" height="30"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="9IB-qZ-XXc">
-                                        <rect key="frame" x="39" y="109" width="30" height="31"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="9IB-qZ-XXc">
+                                        <rect key="frame" x="46" y="109" width="30" height="31"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Click Here to Type" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6H3-gX-VIl" userLabel="Quote Text View">
-                                        <rect key="frame" x="64" y="140" width="193" height="46"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" text="Tap Here to Type" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6H3-gX-VIl" userLabel="Quote Text View">
+                                        <rect key="frame" x="71" y="140" width="180" height="46"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
